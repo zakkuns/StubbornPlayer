@@ -2,7 +2,7 @@
 
 Author:
 
-Grading Checklist:
+## Grading Checklist:
 
 * [ out of 20] Use of iteration is appropriate and demonstrates mastery of the programming concept
 * [ out of 20] Use of control flow is appropriate and demonstrates mastery of the programming concept
@@ -14,6 +14,6 @@ Grading Checklist:
 * [ out of 10] The code is easy to read with proper spacing, indentation, and other style conventions
 
 
-Notes:
+## Notes:
 
 
