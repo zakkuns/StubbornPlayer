@@ -5,106 +5,52 @@ using namespace std;
 
 int main()
 {
-  char yn = 'n';
   SecretDoor game;
-  bool repeat = false;
-  do
-  { 
-    game.newGame();
-    char in;
     
-    bool valid = false;
-   
-    do
-    {
-      cout<<"Which door do you choose? (A/B/C) ";
-      cin>>in;
+  //game.newGame(); 
+  //
+  // this statement should be called at the beginning of a game
+  // because it hides the prize behind a random door and resets
+  // the game so that the user has not guessed any doors yet
 
-      switch(in)
-      {
-        case 'a':
-        case 'A':
-          game.guessDoorA();
-          valid = true;
-          break;
-        case 'b':
-        case 'B':
-          game.guessDoorB();
-          valid = true;
-          break;
-        case 'c':
-        case 'C':
-          game.guessDoorC();
-          valid = true;
-          break;
-        default:
-          cout<<in<<" is not a valid door. Please choose from (A/B/C)\n";
-          valid = false;
-      }
-    }while( !valid );
-
-    if( game.isAopen() )
-    {
-       cout<<"It is not behind door A.\n";
-    }
-    else if( game.isBopen() )
-    {
-       cout<<"It is not behind door B.\n";
-    }
-    else if( game.isCopen() )
-    {
-       cout<<"It is not behind door C.\n";
-    }
-    else
-    {
-      cout<<"this should be impossible.\n";
-    }
+  //game.guessDoorA();
+  //
+  // this statement communicates to the game that the user guesses
+  // Door A. Similarly, you can use: 
+  //
+  //game.guessDoorB();
+  //
+  // and 
+  //
+  //game.guessDoorC(); 
+  //
+  // to guess from the other doors. During each game, the user can
+  // make two guesses. Then the game will determine if they won or lost.
+  // Similarly, after the first guess, the game determines which door to
+  // open (which reveals one of the losing doors). 
     
-    do
-    {
-      cout<<"Which door do you choose? (A/B/C) ";
-      cin>>in;
+  //if( game.isAopen() )
+  //
+  // as just mentioned, this statement checks to see which door has been
+  // revealed after the first guess has been made. None of the doors are
+  // opened until after the user makes their first guess (using a guessDoorX()
+  // function) and the door opened indicates a door the prize is NOT behind.
+  // to check the other doors, you can also use:
+  //
+  //if( game.isBopen() )
+  //
+  // and
+  //
+  //if( game.isCopen() )
+  //
+  // as you can see, these functions return a boolean (true or false) value
 
-      switch(in)
-      {
-        case 'a':
-        case 'A':
-          game.guessDoorA();
-          valid = true;
-          break;
-        case 'b':
-        case 'B':
-          game.guessDoorB();
-          valid = true;
-          break;
-        case 'c':
-        case 'C':
-          game.guessDoorC();
-          valid = true;
-          break;
-        default:
-          cout<<in<<" is not a valid door. Please choose from (A/B/C.\n";
-          valid = false;
-      }
-    }while( !valid );
-
-    if( game.isWinner() )
-      cout<<"You won!\n";
-    else
-      cout<<"You lose.\n";
-
-
-    do
-    {
-      cout<<"Play again? (Y/N) ";
-      cin>>yn;
-      valid = yn=='y' || yn=='Y' || yn=='n' || yn=='N';
-      if( !valid )
-      {
-        cout<<yn<<" is not a valid response. Please choose from (Y/N)\n";
-      }
-    }while( !valid );
-  }while( yn!='n' && yn!='N' );
+  //if( game.isWinner() )
+  //
+  // this statement checks to see if the user's second guess was the correct
+  // door that the prize is hidden behind. It returns a boolean value.
+  // When this statement is used when a game has had anything besides 2 guesses
+  // have been made, it will always return false.
 
   return 0;
 }
