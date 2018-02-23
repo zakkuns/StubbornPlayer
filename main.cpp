@@ -12,7 +12,7 @@ int main()
   // this statement should be called at the beginning of a game
   // because it hides the prize behind a random door and resets
   // the game so that the user has not guessed any doors yet
-
+  
   //game.guessDoorA();
   //
   // this statement communicates to the game that the user guesses
